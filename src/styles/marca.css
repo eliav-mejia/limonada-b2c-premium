@@ -18,6 +18,7 @@
   .heroe { @apply mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-8 md:grid-cols-[1.1fr_0.9fr] md:py-20; }
   .heroe__foto { @apply relative m-0 overflow-hidden rounded-t-[999px] bg-arena aspect-[2/3]; }
   .heroe__foto img { @apply h-full w-full object-cover object-top mix-blend-multiply will-change-transform; }
+  .heroe__foto--color img { @apply mix-blend-normal; }
 
   /* capítulos de la portada */
   .capitulos { @apply grid gap-6 md:grid-cols-2; }

@@ -231,8 +231,8 @@ def portada():
           <a class="boton boton--linea" href="marcas/esenciales/">Ver Esenciales</a>
         </div>
       </div>
-      <figure class="heroe__foto" data-parallax="0.12">
-        <img class="protegida" src="img/fotos/05-directora.jpg" alt="Saco entallado sin solapa de un botón en textura café y pantalón recto café" width="640" height="960" fetchpriority="high" />
+      <figure class="heroe__foto heroe__foto--color" data-parallax="0.12">
+        <img class="protegida" src="img/fotos/Conjunto17_Joven_Rosa.jpg" alt="Mujer joven sonriente con traje sastre rosa palo de saco con solapa y pantalón recto, blusa gris" width="816" height="1306" fetchpriority="high" />
       </figure>
     </section>
 
