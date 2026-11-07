@@ -3,6 +3,7 @@ import { marcaPorId } from './marcas';
 import { iniciarParallax } from './parallax';
 import { iniciarProteccion } from './proteger';
 
+document.documentElement.classList.add('js');
 iniciarParallax();
 iniciarProteccion();
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Genera todas las páginas HTML de Limonada Premium (cabecera, pie y <head> comunes) y public/sitemap.xml.
+"""Genera todas las páginas HTML de Limonada Premium (cabecera, pie y <head> comunes) y sitemap.xml.
 
-    python3 tools/paginas.py        # desde la raíz del repositorio; luego npm run build
+    python3 tools/paginas.py        # desde la raíz; npm run build lo llama y compila css/ y js/
 
 Arquitectura (Variante B · Portafolio editorial, como casasiego.com):
     index.html                         portada: Cap. I Tu colección · Cap. II Esenciales · láminas · Club · equipos
@@ -17,7 +17,7 @@ import html, json, pathlib
 
 RAIZ = pathlib.Path(__file__).resolve().parents[1]
 URL = "https://eliav-mejia.github.io/limonada-b2c-premium/"
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 WA = "5215614800424"          # WhatsApp de Limonada (confirmar con la clienta antes de v2.0.0)
 CORREO = "ventas@limonada.com.mx"
 KEYWORDS = ("trajes sastre para mujer, ropa ejecutiva para mujer, blusas a la medida, sastrería para dama, "
@@ -120,7 +120,7 @@ def head(p, titulo, desc, ruta, extra=""):
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="{p}src/styles/sitio.css" />{extra}
+  <link rel="stylesheet" href="{p}css/sitio.css" />{extra}
 </head>
 """
 
@@ -174,7 +174,7 @@ def pie(p):
     </div>
     <div class="pie__base"><span>© <span data-anio>2026</span> Limonada Premium</span><span>v{VERSION}</span></div>
   </footer>
-  <script type="module" src="{p}src/main.ts"></script>
+  <script defer src="{p}js/main.js"></script>
 </body>
 </html>
 """
@@ -630,7 +630,7 @@ def main():
     escribir("404.html", no_encontrada())
     rutas = ["", "marcas/coleccion/", "marcas/esenciales/", "marcas/esenciales/guia-de-tallas/", "membresia/", "ayuda/"]
     rutas += [f"ayuda/{a[1]}/" for a in ARTICULOS] + ["terminos.html", "privacidad/"]
-    escribir("public/sitemap.xml", sitemap(rutas))
+    escribir("sitemap.xml", sitemap(rutas))
 
 
 if __name__ == "__main__":

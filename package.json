@@ -1,23 +1,25 @@
 {
   "name": "limonada-b2c-premium",
   "private": true,
-  "version": "1.0.0",
-  "description": "Limonada Premium · sastrería ejecutiva para mujer · Variante B (TypeScript + Tailwind + Worker)",
+  "version": "1.0.1",
+  "description": "Limonada Premium · sastrería ejecutiva para mujer · Variante B (TypeScript + Tailwind, estático sin build al servir)",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "test": "vitest run",
-    "paginas": "python3 tools/paginas.py"
+    "paginas": "python3 tools/paginas.py",
+    "css": "tailwindcss -i src/styles/sitio.css -o css/sitio.css --minify",
+    "js": "esbuild src/main.ts --bundle --format=iife --target=es2020 --minify --outfile=js/main.js",
+    "build": "python3 tools/paginas.py && tsc --noEmit && npm run css && npm run js",
+    "dev": "python3 -m http.server 8231",
+    "test": "vitest run"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "4.20260702.1",
+    "@tailwindcss/cli": "4.3.3",
+    "esbuild": "0.28.2",
+    "tailwindcss": "4.3.3",
     "typescript": "5.9.3",
     "vite": "7.3.7",
     "vitest": "4.1.11",
-    "@cloudflare/workers-types": "4.20260702.1",
-    "wrangler": "4.149.0",
-    "tailwindcss": "4.3.3",
-    "@tailwindcss/vite": "4.3.3"
+    "wrangler": "4.149.0"
   }
 }

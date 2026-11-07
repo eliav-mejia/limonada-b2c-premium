@@ -90,8 +90,9 @@
   .manifiesto__firma { @apply mt-6 text-xs uppercase tracking-[0.25em] text-tinta/70; }
 
   /* aparición al desplazar */
-  .revelar { @apply opacity-0 translate-y-6 transition duration-700 ease-sastre motion-reduce:opacity-100 motion-reduce:translate-y-0; }
-  .revelar.visible { @apply opacity-100 translate-y-0; }
+  /* solo con JavaScript activo (main.ts pone html.js): sin JS todo queda visible */
+  .js .revelar { @apply opacity-0 translate-y-6 transition duration-700 ease-sastre motion-reduce:opacity-100 motion-reduce:translate-y-0; }
+  .js .revelar.visible { @apply opacity-100 translate-y-0; }
 
   img.protegida { -webkit-user-drag: none; @apply select-none; }
 }
