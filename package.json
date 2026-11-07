@@ -1,0 +1,23 @@
+{
+  "name": "limonada-b2c-premium",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Limonada Premium · sastrería ejecutiva para mujer · Variante B (TypeScript + Tailwind + Worker)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "paginas": "python3 tools/paginas.py"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "vitest": "4.1.11",
+    "@cloudflare/workers-types": "4.20260702.1",
+    "wrangler": "4.149.0",
+    "tailwindcss": "4.3.3",
+    "@tailwindcss/vite": "4.3.3"
+  }
+}

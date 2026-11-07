@@ -1,0 +1,55 @@
+/* Capa 2 · estructura: base, cabecera, secciones, rejillas y pie (Tailwind @apply) */
+@layer base {
+  html { @apply scroll-smooth; }
+  body { @apply bg-crema text-tinta font-sans text-[16px] leading-relaxed antialiased; }
+  h1, h2, h3 { @apply font-display font-medium tracking-tight text-balance; }
+  h1 { @apply text-4xl leading-[1.05] sm:text-5xl lg:text-6xl; }
+  h1 em, .titulo-seccion em { @apply italic text-terracota-profundo; }
+  a { @apply text-terracota-profundo underline-offset-4; }
+  img { @apply max-w-full h-auto; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-terracota; }
+}
+
+@layer components {
+  .saltar { @apply sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-tinta focus:text-crema focus:px-3 focus:py-2; }
+
+  /* cabecera */
+  .barra { @apply sticky top-0 z-40 flex items-center justify-between gap-4 px-4 py-3 sm:px-8
+                  bg-crema/90 backdrop-blur border-b border-arena; }
+  .logo { @apply flex items-baseline gap-1.5 no-underline text-tinta; }
+  .logo__a { @apply font-display text-2xl font-semibold lowercase; }
+  .logo__b { @apply text-[10px] font-semibold uppercase tracking-[0.3em] text-terracota-profundo; }
+  .menu-boton { @apply md:hidden rounded-full border border-lana px-4 py-1.5 text-sm text-tinta bg-transparent cursor-pointer; }
+  .menu { @apply hidden md:flex items-center gap-6 text-sm; }
+  .menu a { @apply text-tinta no-underline hover:text-terracota-profundo transition-colors; }
+  .menu a.menu__cta { @apply rounded-full bg-terracota-profundo text-crema px-4 py-2 hover:bg-tinta hover:text-crema; }
+  .menu.abierto { @apply absolute inset-x-0 top-full flex flex-col items-start gap-4 bg-crema px-4 py-6 border-b border-arena; }
+
+  /* secciones */
+  .contenedor { @apply mx-auto w-full max-w-6xl px-4 sm:px-8; }
+  .seccion { @apply py-16 sm:py-24; }
+  .seccion--marfil { @apply bg-arena/60; }
+  .seccion--tinta { @apply bg-terracota-profundo text-crema; }
+  .seccion--tinta .ceja { @apply text-arena; }
+  .seccion--tinta .lista-medidas li { @apply border-crema/25; }
+  .seccion--tinta .lista-medidas span { @apply text-arena; }
+  .cabeza-pagina { @apply pt-14 pb-12 sm:pt-20 sm:pb-16; }
+  .dos-columnas { @apply grid gap-10 md:grid-cols-2 md:gap-16; }
+  .texto-largo { @apply max-w-3xl; }
+  .texto-largo h2 { @apply mt-10 mb-3 text-2xl sm:text-3xl; }
+  .texto-largo p, .texto-largo li { @apply mb-3; }
+  .texto-largo ol { @apply list-decimal pl-5; }
+
+  /* pie */
+  .pie { @apply bg-tinta text-arena; }
+  .pie__rejilla { @apply mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-8 sm:grid-cols-2 lg:grid-cols-4; }
+  .pie a, .pie span { @apply block text-sm text-arena no-underline py-0.5 hover:text-terracota-claro; }
+  .pie .logo { @apply text-crema; }
+  .pie .logo span { @apply inline py-0; }
+  .pie .logo .logo__a { @apply text-3xl text-crema; }
+  .pie .logo__b { @apply text-terracota-claro; }
+  .pie__titulo { @apply mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-taupe; }
+  .pie__nota { @apply mt-3 max-w-xs text-sm text-arena/80; }
+  .pie__base { @apply mx-auto flex max-w-6xl justify-between gap-4 border-t border-lana/40 px-4 py-5 text-xs sm:px-8; }
+  .pie__base span { @apply inline; }
+}

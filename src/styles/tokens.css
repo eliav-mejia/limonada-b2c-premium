@@ -1,0 +1,31 @@
+/* Capa 1 · tokens de Limonada Premium (Tailwind v4 @theme → utilidades bg-*, text-*, border-*…)
+ *
+ * | Nombre                 | Hex     | Tono visual                | Token              |
+ * |------------------------|---------|----------------------------|--------------------|
+ * | Off-White / Base       | #EFEBE4 | Crema cálida pálida        | crema              |
+ * | Warm Sand              | #E3D1BE | Beige suave claro          | arena              |
+ * | Terracotta Light       | #CD8D77 | Rosa polvo / arcilla       | terracota-claro    |
+ * | Terracotta Medium      | #AD5C43 | Arcilla tierra intensa     | terracota          |
+ * | Terracotta Deep        | #8C432C | Terracota quemada oscura   | terracota-profundo |
+ * | Fired Earth / Taupe    | #A6927F | Café grisáceo neutro       | taupe              |
+ * | Muted Wool Brown       | #8F7D71 | Greige brezo profundo      | lana               |
+ * | Tinta (añadido)        | #2B211C | Texto; lana oscurecida     | tinta              |
+ *
+ * Contraste sobre crema: tinta 13.2:1 · terracota-profundo 6.0:1 · terracota 4.0:1 (solo texto ≥ 24px o adornos)
+ * · lana 3.3:1 y taupe 2.5:1 (solo bordes, adornos y texto grande). Crema sobre terracota-profundo 6.0:1.
+ */
+@theme {
+  --color-crema: #EFEBE4;
+  --color-arena: #E3D1BE;
+  --color-terracota-claro: #CD8D77;
+  --color-terracota: #AD5C43;
+  --color-terracota-profundo: #8C432C;
+  --color-taupe: #A6927F;
+  --color-lana: #8F7D71;
+  --color-tinta: #2B211C;
+
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --ease-sastre: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

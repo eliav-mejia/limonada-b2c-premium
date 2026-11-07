@@ -1,0 +1,9 @@
+name = "limonada-premium-imagenes"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+
+# Rutas del sitio que pasan por el Worker (ajustar al dominio real):
+# routes = [{ pattern = "eliav-mejia.github.io/img/*", zone_name = "eliav-mejia.github.io" }]
+
+[vars]
+DOMINIOS_PERMITIDOS = "eliav-mejia.github.io,www.eliav-mejia.github.io"

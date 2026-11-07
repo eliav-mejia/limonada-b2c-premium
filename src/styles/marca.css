@@ -1,0 +1,97 @@
+/* Capa 3 · componentes de marca Limonada Premium (Tailwind @apply sobre los tokens de tokens.css) */
+@layer components {
+  .ceja { @apply mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-terracota-profundo; }
+  .ceja a { @apply no-underline hover:underline; }
+  .entrada { @apply mt-5 max-w-xl text-lg text-tinta/80; }
+  .titulo-seccion { @apply mb-8 text-3xl sm:text-4xl; }
+  .subtitulo { @apply mb-3 text-2xl; }
+  .acciones { @apply mt-8 flex flex-wrap gap-3; }
+  .nota { @apply text-sm text-tinta/70; }
+
+  /* botones */
+  .boton { @apply inline-flex items-center justify-center rounded-full bg-terracota-profundo px-6 py-3 text-sm font-semibold
+                  text-crema no-underline transition-colors duration-300 ease-sastre hover:bg-tinta cursor-pointer border-0; }
+  .boton--linea { @apply bg-transparent text-terracota-profundo ring-1 ring-terracota-profundo hover:bg-terracota-profundo hover:text-crema; }
+  .seccion--tinta .boton--linea { @apply text-crema ring-crema hover:bg-crema hover:text-terracota-profundo; }
+
+  /* héroe */
+  .heroe { @apply mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-8 md:grid-cols-[1.1fr_0.9fr] md:py-20; }
+  .heroe__foto { @apply relative m-0 overflow-hidden rounded-t-[999px] bg-arena aspect-[2/3]; }
+  .heroe__foto img { @apply h-full w-full object-cover object-top mix-blend-multiply will-change-transform; }
+
+  /* capítulos de la portada */
+  .capitulos { @apply grid gap-6 md:grid-cols-2; }
+  .capitulo { @apply block rounded-3xl bg-crema p-8 text-tinta no-underline ring-1 ring-taupe/40 transition duration-500 ease-sastre
+                     hover:-translate-y-1 hover:ring-terracota; }
+  .capitulo h3 { @apply mt-2 mb-3 text-3xl; }
+  .capitulo p { @apply text-tinta/80; }
+  .capitulo__num { @apply text-xs font-semibold uppercase tracking-[0.2em] text-terracota-profundo; }
+  .flecha { @apply mt-6 inline-block text-sm font-semibold text-terracota-profundo; }
+
+  /* láminas */
+  .laminas { @apply grid grid-cols-2 gap-4 lg:grid-cols-4; }
+  .lamina { @apply block text-tinta no-underline; }
+  .lamina__num { @apply mb-2 block text-[11px] uppercase tracking-[0.2em] text-tinta/70; }
+  .lamina__marco { @apply block overflow-hidden rounded-2xl bg-arena aspect-[2/3]; }
+  .lamina__marco img { @apply h-full w-full object-cover mix-blend-multiply transition-transform duration-700 ease-sastre; }
+  .lamina:hover .lamina__marco img { @apply scale-[1.04]; }
+  .lamina__pie { @apply mt-3 block; }
+  .lamina__pie b { @apply block font-display text-xl font-medium; }
+  .lamina__pie span { @apply text-sm text-tinta/70; }
+
+  /* medidas de la blusa */
+  .lista-medidas { @apply m-0 list-none p-0; }
+  .lista-medidas li { @apply grid gap-1 border-b border-taupe/40 py-4 sm:grid-cols-[10rem_1fr]; }
+  .lista-medidas b { @apply font-display text-xl font-medium; }
+
+  /* pasos */
+  .pasos { @apply grid list-none gap-6 p-0 md:grid-cols-3; counter-reset: paso; }
+  .pasos li { @apply rounded-3xl bg-arena/60 p-7; counter-increment: paso; }
+  .pasos li::before { content: "0" counter(paso); @apply mb-4 block font-display text-4xl text-terracota; }
+  .pasos b { @apply block font-display text-2xl font-medium; }
+  .pasos span { @apply mt-2 block text-tinta/80; }
+
+  /* fichas de Esenciales */
+  .fichas { @apply grid gap-16; }
+  .ficha { @apply grid items-center gap-8 md:grid-cols-2 scroll-mt-24; }
+  .ficha:nth-child(even) .lamina__marco { @apply md:order-2; }
+  .ficha h2 { @apply mb-6 text-4xl; }
+  .ficha dl { @apply mb-8 grid grid-cols-[7rem_1fr] gap-y-2 text-sm; }
+  .ficha dt { @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-tinta/70 pt-0.5; }
+  .ficha dd { @apply m-0; }
+
+  /* tablas */
+  .tabla-envoltura { @apply overflow-x-auto; }
+  table { @apply w-full border-collapse text-sm; }
+  th { @apply border-b-2 border-tinta px-3 py-2 text-left text-[11px] uppercase tracking-[0.14em] text-tinta/70; }
+  td { @apply border-b border-arena px-3 py-2; }
+
+  /* Centro de Ayuda */
+  .preguntas { @apply mb-8 list-none p-0; }
+  .preguntas li { @apply border-b border-arena; }
+  .preguntas a { @apply block py-3 text-tinta no-underline hover:text-terracota-profundo; }
+  .preguntas a::after { content: " →"; @apply text-terracota; }
+
+  /* formulario */
+  .formulario-bloque { @apply max-w-3xl; }
+  .formulario { @apply grid gap-5 sm:grid-cols-2; }
+  .formulario label { @apply grid gap-1.5 text-sm font-medium; }
+  .formulario .ancho, .formulario__nota { @apply sm:col-span-2; }
+  .formulario input, .formulario select, .formulario textarea {
+    @apply w-full rounded-xl border border-taupe bg-crema px-4 py-3 font-sans text-base text-tinta
+           focus:border-terracota focus:outline-none focus:ring-2 focus:ring-terracota-claro/50; }
+  .formulario .boton { @apply justify-self-start; }
+  .formulario__nota { @apply text-xs text-tinta/70; }
+  .gracias { @apply rounded-2xl bg-arena p-6 font-display text-2xl; }
+
+  /* manifiesto */
+  .manifiesto { @apply bg-crema text-center; }
+  .manifiesto blockquote { @apply mx-auto max-w-3xl font-display text-3xl italic leading-snug text-terracota-profundo sm:text-4xl; }
+  .manifiesto__firma { @apply mt-6 text-xs uppercase tracking-[0.25em] text-tinta/70; }
+
+  /* aparición al desplazar */
+  .revelar { @apply opacity-0 translate-y-6 transition duration-700 ease-sastre motion-reduce:opacity-100 motion-reduce:translate-y-0; }
+  .revelar.visible { @apply opacity-100 translate-y-0; }
+
+  img.protegida { -webkit-user-drag: none; @apply select-none; }
+}

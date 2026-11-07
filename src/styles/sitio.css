@@ -1,0 +1,6 @@
+/* Entrada única de estilos (Tailwind CSS v4 por @tailwindcss/vite).
+   Capas como en la Variante B: tokens (@theme) → estructura → componentes de marca. */
+@import "tailwindcss";
+@import "./tokens.css";
+@import "./layout.css";
+@import "./marca.css";
